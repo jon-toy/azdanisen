@@ -48,6 +48,10 @@ module.exports = function(passport){
 	req.logout();
 	res.redirect('/');
 	});
+	
+	router.get('/handlebars_test', function(req, res) {
+		res.render('test', { front_end_dev:"Jessica", back_end_dev:"Jon" });
+	});
 
 	return router;
 }
