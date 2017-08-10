@@ -9,6 +9,8 @@ var index = require('./routes/index');
 
 var app = express();
 
+app.set('port', process.env.PORT || 443);
+
 // mongoose apis
 var dbConfig = require('./db.js');
 var mongoose = require('mongoose');
