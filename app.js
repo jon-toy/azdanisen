@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var hbs = require('hbs');
 var fs = require('fs');
 
-var index = require('./routes/index');
-
 var app = express();
 
 // mongoose apis
@@ -30,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // error handler
-/*app.use(function(err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -38,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});*/
+});
 
 // Using the flash middleware provided by connect-flash to store messages in session
  // and displaying in templates

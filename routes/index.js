@@ -12,47 +12,46 @@ var isAuthenticated = function (req, res, next) {
 }
 
 module.exports = function(passport){
- 
-	router.get('/', function(req,res){
-		res.render('coming_soon');
-	});	
 	
-	/*
 	/* GET login page. */
-	/*router.get('/', function(req, res) {
-	// Display the Login page with any flash message, if any
-	res.render('index', { title:'Handlebars and MongoDB with Express 4' });
-	//res.render('index', { message: req.flash('message') });
+	router.get('/', function(req, res) {
+		// Show the coming soon page
+		res.render('coming_soon', { });
+	});
+	
+	router.get('/dev', function(req, res) {
+		// Display the Login page with any flash message, if any	
+		res.render('index', { message: req.flash('message') });
 	});
 
 	/* Handle Login POST */
 	router.post('/login', passport.authenticate('login', {
-	successRedirect: '/home',
-	failureRedirect: '/',
-	failureFlash : true 
+		successRedirect: '/my_account',
+		failureRedirect: '/dev',
+		failureFlash : true 
 	}));
 
 	/* GET Registration Page */
 	router.get('/signup', function(req, res){
-	res.render('register',{message: req.flash('message')});
+		res.render('register',{message: req.flash('message')});
 	});
 
 	/* Handle Registration POST */
 	router.post('/signup', passport.authenticate('signup', {
-	successRedirect: '/home',
-	failureRedirect: '/signup',
-	failureFlash : true 
+		successRedirect: '/my_account',
+		failureRedirect: '/signup',
+		failureFlash : true 
 	}));
 
-	/* GET Home Page */
-	router.get('/home', isAuthenticated, function(req, res){
-	res.render('home', { user: req.user });
+	/* GET Account Page */
+	router.get('/my_account', isAuthenticated, function(req, res){
+		res.render('my_account', { user: req.user });
 	});
 
 	/* Handle Logout */
 	router.get('/signout', function(req, res) {
-	req.logout();
-	res.redirect('/');
+		req.logout();
+		res.redirect('/dev');
 	});
 	
 	return router;
