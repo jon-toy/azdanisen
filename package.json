@@ -12,6 +12,7 @@
     "express": "~4.15.2",
     "express-session": "^1.15.5",
     "handlebars": "^4.0.10",
+    "hbs": "^4.0.1",
     "jade": "~1.11.0",
     "mongoose": "^4.11.5",
     "morgan": "~1.8.1",

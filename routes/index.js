@@ -13,10 +13,16 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
  
+	router.get('/', function(req,res){
+		res.render('coming_soon');
+	});	
+	
+	/*
 	/* GET login page. */
-	router.get('/', function(req, res) {
+	/*router.get('/', function(req, res) {
 	// Display the Login page with any flash message, if any
-	res.render('index', { message: req.flash('message') });
+	res.render('index', { title:'Handlebars and MongoDB with Express 4' });
+	//res.render('index', { message: req.flash('message') });
 	});
 
 	/* Handle Login POST */
@@ -49,9 +55,5 @@ module.exports = function(passport){
 	res.redirect('/');
 	});
 	
-	router.get('/handlebars_test', function(req, res) {
-		res.render('test', { front_end_dev:"Jessica", back_end_dev:"Jon" });
-	});
-
 	return router;
 }
