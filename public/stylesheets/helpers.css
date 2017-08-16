@@ -1,0 +1,19 @@
+/* Removing offset at each breakpoint.  Keeps gutters intact. */
+
+@media (max-width: 479px) {
+	.mdl-cell--no-offset, .mdl-cell--no-offset-phone.mdl-cell--no-offset-phone {
+		margin-left: 8px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 839px) {
+	.mdl-cell--no-offset, .mdl-cell--no-offset-tablet.mdl-cell--no-offset-tablet {
+		margin-left: 8px;
+	}
+}
+
+@media (min-width: 840px) {
+	.mdl-cell--no-offset, .mdl-cell--no-offset-desktop.mdl-cell--no-offset-desktop {
+		margin-left: 8px;
+	}
+}

@@ -1,9 +1,10 @@
+/* Global styles */
+
 body {
   background-color: #333;
   color: #fff;
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
 }
-
 .block {
 	display: block;
 }
@@ -11,14 +12,14 @@ body {
 	font-size: 11px;
 	line-height: 150%;
 }
-
+.text-shadow {
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
 #container {
 	padding-top: 5vh;
 }
 
+/* Coming soon page */
 .coming-soon-heading {
 	line-height: 1;
-}
-.text-shadow {
-	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
